@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container">
+        <main class="py-4">
+        	<h1>Create Blog</h1>
+            <form action="{% url 'blog:create_post' %}" method="POST" enctype="multipart/form-data">
+    
+                {% csrf_token %}
+
+                <!-- Title -->
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" placeholder="Title" class="form-control">
+                </div>
+                <!-- ./Title -->
+
+                <!-- Body -->
+                <div class="form-group">
+                    <label for="body">Body</label>
+                    <textarea name="body" cols="30" rows="10" placeholder="Body" class="form-control"></textarea>
+                </div>
+                <!-- ./Body -->
+
+                <!-- Body -->
+                <div class="form-group">
+                    <label for="body">Cover Image</label>
+                    <input type="file" name="cover_image" id="" />
+                </div>
+                <!-- ./Body -->
+
+                <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+            </form>
+        </main>
+    </div>
+{% endblock %}

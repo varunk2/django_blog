@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container">
+        <main class="py-4">
+        	<h1>Create Blog</h1>
+            <form action="{% url 'blog:edit' post.id %}" method="POST">
+    
+                {% csrf_token %}
+
+                <!-- Title -->
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" placeholder="Title" class="form-control" value="{{ post.title }}">
+                </div>
+                <!-- ./Title -->
+
+                <!-- Body -->
+                <div class="form-group">
+                    <label for="body">Body</label>
+                    <textarea name="body" cols="30" rows="10" placeholder="Body" class="form-control">{{ post.body }}</textarea>
+                </div>
+                <!-- ./Body -->
+
+                <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+            </form>
+        </main>
+    </div>
+{% endblock %}

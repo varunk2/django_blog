@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container">
+        <main class="py-4">
+        	<div class="jumbotron text-center">
+        		<h1>Welcome to  Django Blog!!</h1>
+        		<p>Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.</p>
+        		<a href="{% url 'login' %}" class="btn btn-lg btn-success">Login</a>
+        		<a href="#" class="btn btn-lg btn-primary">Register</a>
+        	</div>
+        </main>
+    </div>
+{% endblock %}
